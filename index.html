@@ -47,6 +47,13 @@
             font-size: 9px;
         }
 
+        .chat {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
         @media (max-width: 920px){
             .mainContainer {
                 flex-direction: column;
@@ -69,25 +76,31 @@
 
 </head>
 <body>
-    <div class="mainContainer">
-        <div class="candidatesContainer">
-            <div class="lolaPic">
-                <img id="lola" src="imgs/lolaSite.png" alt="" width="250px" height="250px">
+    <div>
+        <div class="mainContainer">
+            <div class="candidatesContainer">
+                <div class="lolaPic">
+                    <img id="lola" src="imgs/lolaSite.png" alt="" width="250px" height="250px">
+                </div>
+                <div class="votesPercent">
+                    <h2 id="lolaTxt" >51</h2>
+                </div>
             </div>
-            <div class="votesPercent">
-                <h2 id="lolaTxt" >51</h2>
+    
+            <div id="middle"><h1 id="middleTxt">Urnas Apuradas: 00 %</h1></div>
+    
+            <div class="candidatesContainer">
+                <div class="bolsaPic">
+                    <img id="bolsa" src="imgs/bolsas465x480.png" alt="" width="250px" height="250px">
+                </div>
+                <div class="votesPercent">
+                    <h2 id="bolsaTxt">49</h2>
+                </div>
             </div>
         </div>
 
-        <div id="middle"><h1 id="middleTxt">Urnas Apuradas: 00 %</h1></div>
-
-        <div class="candidatesContainer">
-            <div class="bolsaPic">
-                <img id="bolsa" src="imgs/bolsas465x480.png" alt="" width="250px" height="250px">
-            </div>
-            <div class="votesPercent">
-                <h2 id="bolsaTxt">49</h2>
-            </div>
+        <div class="chat">
+            <iframe src="https://socketio-chat-h9jt.herokuapp.com/" frameborder="0" width="100%" height="300px"></iframe>
         </div>
     </div>
 
