@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleicoes 2022 - 2 Turno</title>
+
+    <!-- runs axios script -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+        h1 {
+            text-align: center;
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background-color: #CB0808; */
+        }
+
+        .mainContainer {
+            display: flex;
+            column-gap: 150px;
+            /* justify-content: space-between; */
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .votesPercent {
+            border: 1px solid rgb(129, 129, 129)!important;
+            border-radius: 10px;
+            margin-top: 5px;
+            box-shadow: 5px 10px 48px #888888;
+        }
+
+        img {
+            box-shadow: 5px 10px 48px #888888;
+        }
+
+        #vs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="candidatesContainer">
+            <div class="lolaPic">
+                <img id="lola" src="file:///C:/Users/Gabriel%20Velasco/Desktop/lolaSite.png" alt="" width="250px" height="250px">
+            </div>
+            <div class="votesPercent">
+                <h2 id="lolaTxt" >51</h2>
+            </div>
+        </div>
+        <div id="vs"><h1>VS</h1></div>
+        <div class="candidatesContainer">
+            <div class="bolsaPic">
+                <img id="bolsa" src="file:///C:/Users/Gabriel%20Velasco/Desktop/bolsas465x480.png" alt="" width="250px" height="250px">
+            </div>
+            <div class="votesPercent">
+                <h2 id="bolsaTxt">49</h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+<!-- 
+usar text-align: center
+
+usar list p/ fazer lista de icones
+icones == <a href=""></a> 
+
+usar label p/ linkar com input
+
+-->
