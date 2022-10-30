@@ -24,8 +24,14 @@ async function getResults(){
             percentVotos: data.cand[0].pvap.replace(',', '.')
         }
     
-        lolaTxt.innerText = `${cand1.percentVotos} %`;
-        bolsaTxt.innerText = `${cand2.percentVotos} %`;
+        // gambiarra mt rapida
+        if(cand1.nome[0] === 'L'){ // cand1 == lula
+            lolaTxt.innerText = `${cand1.percentVotos} %`;
+            bolsaTxt.innerText = `${cand2.percentVotos} %`;
+        }else{
+            lolaTxt.innerText = `${cand2.percentVotos} %`;
+            bolsaTxt.innerText = `${cand1.percentVotos} %`;
+        }
 
         let test = false;
         let urnasApuradas;
@@ -45,4 +51,4 @@ async function getResults(){
 }
 
 getResults();
-setInterval(getResults, 5000);
+setInterval(getResults, 1000);
