@@ -6,14 +6,14 @@ let cand1 = {}
 let cand2 = {}
 
 async function getResults(){
-    const reqUrl = "https://api.allorigins.win/get?url=https://resultados.tse.jus.br/oficial/ele2022/545/dados-simplificados/br/br-c0001-e000545-r.json";
-    
+    const reqUrl = "https://fierce-savannah-14331.herokuapp.com/ele";
+
     try {
         const dataTmp = await axios.get(reqUrl);
-        console.log("ok");
-        
-        const data = JSON.parse(dataTmp.data.contents); // JSON String to JS Obj
-        // console.dir(data);
+        console.log('ok');
+
+        const data = dataTmp.data;
+
         cand1 = {
             nome: data.cand[0].nm,
             percentVotos: data.cand[0].pvap.replace(',', '.')
