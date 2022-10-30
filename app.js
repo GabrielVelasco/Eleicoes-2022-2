@@ -15,13 +15,13 @@ async function getResults(){
         const data = dataTmp.data;
 
         cand1 = {
-            nome: data.cand[0].nm,
-            percentVotos: data.cand[0].pvap.replace(',', '.')
+            nome: data.cand[1].nm,
+            percentVotos: data.cand[1].pvap.replace(',', '.')
         }
         
         cand2 = {
-            nome: data.cand[1].nm,
-            percentVotos: data.cand[1].pvap.replace(',', '.')
+            nome: data.cand[0].nm,
+            percentVotos: data.cand[0].pvap.replace(',', '.')
         }
     
         lolaTxt.innerText = `${cand1.percentVotos} %`;
