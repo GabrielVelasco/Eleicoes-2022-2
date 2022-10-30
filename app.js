@@ -1,6 +1,6 @@
 const lolaTxt = document.querySelector("#lolaTxt");
 const bolsaTxt = document.querySelector("#bolsaTxt");
-const urnasApuradas = document.querySelector("#middleTxt");
+const progressBar = document.querySelector("#progressBar");
 
 let cand1 = {}
 let cand2 = {}
@@ -26,7 +26,18 @@ async function getResults(){
     
         lolaTxt.innerText = `${cand1.percentVotos} %`;
         bolsaTxt.innerText = `${cand2.percentVotos} %`;
-        urnasApuradas.innerText = `Urnas Apuradas: ${data.pst.replace(',', '.')} %`
+
+        let test = false;
+        let urnasApuradas;
+        
+        if(test)
+            urnasApuradas = "50.15".replace(',', '.') + "%";
+        else
+            urnasApuradas = data.pst.replace(',', '.') + "%";
+
+        progressBar.innerText = urnasApuradas;
+        progressBar.style.width = urnasApuradas;
+        
 
     }catch(e){
         console.log("Error at requesting");
@@ -35,9 +46,3 @@ async function getResults(){
 
 getResults();
 setInterval(getResults, 5000);
-
-    // const config = {
-    //     headers:{
-    //         "x-requested-with": "*"
-    //     }
-    // };

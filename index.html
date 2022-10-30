@@ -7,13 +7,18 @@
 
     <!-- runs axios script -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <style>
-        h1, h2 {
+        h1, h2, h3 {
             text-align: center;
             color: black;
             font-family: 'Courier New', Courier, monospace;
             font-weight: 900;
+        }
+
+        h3 {
+            font-size: 15px;
         }
 
         body {
@@ -41,6 +46,7 @@
         }
 
         #middle {
+            flex-direction: column;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -52,6 +58,21 @@
             justify-content: center;
             align-items: center;
             margin-top: 20px;
+        }
+
+        .progressBarDiv {
+            background-color: #dbd6d6b6;
+            height: 20px;
+            width: 180px;
+        }
+
+        #progressBar {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            height: 100%;
+            background-color: #ff00f2;
+            text-align: center;
+            font-size: 13px;
         }
 
         @media (max-width: 920px){
@@ -76,6 +97,7 @@
 
 </head>
 <body>
+
     <div>
         <div class="mainContainer">
             <div class="candidatesContainer">
@@ -87,7 +109,12 @@
                 </div>
             </div>
     
-            <div id="middle"><h1 id="middleTxt">Urnas Apuradas: 00 %</h1></div>
+            <div id="middle">
+                <h3>Urnas Apuradas</h3>
+                <div class="progressBarDiv">
+                    <div id="progressBar">50%</div>
+                </div>
+            </div>
     
             <div class="candidatesContainer">
                 <div class="bolsaPic">
