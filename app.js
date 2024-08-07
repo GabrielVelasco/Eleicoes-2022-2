@@ -6,7 +6,7 @@ let cand1 = {}
 let cand2 = {}
 
 async function getResults(){
-    const reqUrl = "https://fierce-savannah-14331.herokuapp.com/ele";
+    const reqUrl = "https://resultados.tse.jus.br/oficial/ele2022/545/dados/br/br-c0001-e000545-v.json";
 
     try {
         const dataTmp = await axios.get(reqUrl);
