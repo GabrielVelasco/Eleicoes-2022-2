@@ -15,13 +15,13 @@ async function getResults(){
         const data = null; // api not working anymore...
 
         cand1 = {
-            nome: data.cand[1].nm || 'Lula',
-            percentVotos: data.cand[1].pvap.replace(',', '.') || 50.90
+            nome: 'Lula',
+            percentVotos: 50.90
         }
         
         cand2 = {
-            nome: data.cand[0].nm || 'Bolso',
-            percentVotos: data.cand[0].pvap.replace(',', '.') || 49.10
+            nome: 'Bolso',
+            percentVotos: 49.10
         }
     
         // gambiarra mt rapida
@@ -36,12 +36,9 @@ async function getResults(){
         let test = false;
         let urnasApuradas;
         
-        if(test)
-            urnasApuradas = "50.15".replace(',', '.') + "%";
-        else
-            urnasApuradas = data.pst.replace(',', '.') + "%" || 100;
+        urnasApuradas = 100;
 
-        progressBar.innerText = urnasApuradas;
+        progressBar.innerText = urnasApuradas + '%';
         progressBar.style.width = urnasApuradas;
         
 
