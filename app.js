@@ -39,7 +39,7 @@ async function getResults(){
         urnasApuradas = 100;
 
         progressBar.innerText = urnasApuradas + '%';
-        progressBar.style.width = urnasApuradas;
+        progressBar.style.width = urnasApuradas + '%';
         
 
     }catch(e){
