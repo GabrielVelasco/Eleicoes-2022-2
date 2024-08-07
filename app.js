@@ -6,22 +6,22 @@ let cand1 = {}
 let cand2 = {}
 
 async function getResults(){
-    const reqUrl = "https://resultados.tse.jus.br/oficial/ele2022/545/dados/br/br-c0001-e000545-v.json";
+    // const reqUrl = "https://resultados.tse.jus.br/oficial/ele2022/545/dados/br/br-c0001-e000545-v.json";
 
     try {
-        const dataTmp = await axios.get(reqUrl);
-        console.log('ok');
+        // const dataTmp = await axios.get(reqUrl);
+        // console.log('ok');
 
-        const data = dataTmp.data;
+        const data = null; // api not working anymore...
 
         cand1 = {
-            nome: data.cand[1].nm,
-            percentVotos: data.cand[1].pvap.replace(',', '.')
+            nome: data.cand[1].nm || 'Lula',
+            percentVotos: data.cand[1].pvap.replace(',', '.') || 50.90
         }
         
         cand2 = {
-            nome: data.cand[0].nm,
-            percentVotos: data.cand[0].pvap.replace(',', '.')
+            nome: data.cand[0].nm || 'Bolso',
+            percentVotos: data.cand[0].pvap.replace(',', '.') || 49.10
         }
     
         // gambiarra mt rapida
@@ -39,7 +39,7 @@ async function getResults(){
         if(test)
             urnasApuradas = "50.15".replace(',', '.') + "%";
         else
-            urnasApuradas = data.pst.replace(',', '.') + "%";
+            urnasApuradas = data.pst.replace(',', '.') + "%" || 100;
 
         progressBar.innerText = urnasApuradas;
         progressBar.style.width = urnasApuradas;
@@ -51,4 +51,4 @@ async function getResults(){
 }
 
 getResults();
-setInterval(getResults, 1000);
+// setInterval(getResults, 1000);
